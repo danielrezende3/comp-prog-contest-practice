@@ -7,7 +7,7 @@ This repository contains my solutions to various competitive programming contest
 Each contest is organized in its own folder, named after the contest and division. For example:
 
 ```
-.
+./contests
 ├── Codeforces Round 1003 (Div. 4)/
 │   ├── a.cpp      # Problem A solution
 │   ├── a.input    # Sample input for testing

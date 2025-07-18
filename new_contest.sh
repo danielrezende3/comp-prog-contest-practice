@@ -29,8 +29,8 @@ if ((n < 1 || n > 26)); then
   exit 1
 fi
 
-mkdir -p "$contest"
-pushd "$contest" >/dev/null
+mkdir -p contests/"$contest"
+pushd contests/"$contest" >/dev/null
 
 for ((i = 0; i < n; i++)); do
   ascii=$((97 + i))
@@ -49,12 +49,12 @@ void solve() {
 }
 
 int main() {
-    int count;
-    cin >> count;
-    while (count--) {
-        solve();
-    }
-    return 0;
+  int count;
+  cin >> count;
+  while (count--) {
+    solve();
+  }
+  return 0;
 }
 EOF
 done
