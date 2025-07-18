@@ -35,14 +35,23 @@ pushd contests/"$contest" >/dev/null
 for ((i = 0; i < n; i++)); do
   ascii=$((97 + i))
   letter=$(printf '%b' "\\x$(printf '%x' "$ascii")")
-  touch "${letter}.cpp" "${letter}.input"
-  cat >"${letter}.cpp" <<'EOF'
+  
+  if [[ ! -f "${letter}.input" ]]; then
+    touch "${letter}.input"
+  else
+    echo "Skipping ${letter}.input (already exists)"
+  fi
+  
+  if [[ ! -f "${letter}.cpp" ]]; then
+    cat >"${letter}.cpp" <<'EOF'
 // time-taken:
+// tag:
 #include <bits/stdc++.h>
 
 using namespace std;
 #define ll long long
 #define ld long double
+#define vll vector<ll>
 
 void solve() {
     
@@ -57,6 +66,9 @@ int main() {
   return 0;
 }
 EOF
+  else
+    echo "Skipping ${letter}.cpp (already exists)"
+  fi
 done
 
 popd >/dev/null

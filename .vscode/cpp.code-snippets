@@ -3,11 +3,13 @@
 		"prefix": "cpt",
 		"body": [
 			"// time-taken:",
+			"// tag:",
 			"#include <bits/stdc++.h>",
 			"",
 			"using namespace std;",
 			"#define ll long long",
 			"#define ld long double",
+			"#define vll vector<ll>",
 			"",
 			"void solve() {",
 			"  $1",

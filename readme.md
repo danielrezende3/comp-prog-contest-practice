@@ -39,6 +39,28 @@ You can automatically create a new contest folder with boilerplate files using [
 ./new_contest.sh "Codeforces Round 1025 (Div. 3)" Z
 ```
 
+## Contest Reporting
+
+Use [contest_report.py](contest_report.py) to generate CSV reports from completed contests:
+
+```bash
+# Generate report for a specific contest
+python contest_report.py "contests/Codeforces Round 1025 (Div. 3)" -o results.csv
+```
+
+The script extracts information from the first two comment lines of each `.cpp` file:
+- `// time-taken: <minutes>` - Time spent solving the problem
+- `// tag: <status>` - Problem status (SOLVED, TIMEOUT, PARTIAL, NO_IDEA)
+
+Valid tags: `SOLVED`, `TIMEOUT`, `PARTIAL`, `NO_IDEA`
+
+The generated CSV includes:
+- Contest name
+- Problem file
+- Time taken
+- Tag/status
+- Overall status (SOLVED_ON_TIME if ≤20 minutes, TIME_EXCEEDED if >20 minutes)
+
 ## How to Build & Run
 - **Compile a solution manually:**
   ```bash
