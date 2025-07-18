@@ -51,7 +51,13 @@ def _collect_row(file: Path, contest_name: str) -> tuple[str, str, int, str, str
 
     time = extract_time(first_two[0])
     tag = extract_tag(first_two[1])
-    status = "TIME_EXCEEDED" if time > 20 else "SOLVED_ON_TIME"
+    
+    if tag == "SOLVED" and time > 20:
+        status = "TIME_EXCEEDED"
+    elif tag == "SOLVED":
+        status = "SOLVED_ON_TIME"
+    else:
+        status = "NOT_SOLVED"
 
     return (contest_name, file.name, time, tag, status)
 
