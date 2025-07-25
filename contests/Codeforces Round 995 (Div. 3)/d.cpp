@@ -7,32 +7,31 @@ using namespace std;
 #define ld long double
 #define vll vector<ll>
 
+void help_solve(vll *a, ll threshold, ll){
+
+
+}
+
 void solve() {
-  ll n, x, y, res = 0;
-  cin >> n >> x >> y;
+  ll n, min, y, res = 0, sum = 0, j = 0;
+  cin >> n >> min >> y;
   vll a(n);
-  for (ll i = 0; i < n; i++) cin >> a[i];
 
-  // if you simultaneously remove the elements at positions i and j from the
-  // sequence a, the sum of the remaining elements is at least x and at most y. 
+  for (ll i = 0; i < n; i++) {
+    cin >> a[i];
+    sum += a[i];
+  }
+  sort(a.begin(), a.end());
 
-  // A ideia seria calcular todos pares possíveis que não sejam repetidos
-  // Dai fazer sum(a) - par, if (true) then res++ 
+  for (int i = n - 1; i >= 0; i--) {
+    while (j < n && sum - a[i] - a[j] >= min) j++;
+    res += (n - j);
+  }
 
-  // mabe count the frequency of them, then calculate their differences?
-  // If I have freq 6:2
+  for (ll i = 0; i < n; i++)
+    if (sum - a[i] - a[i] < min) res--;
 
-  // possible combinations: (1,2), (1,3), (1,4), (2,3), (2,4), (3,4)
-
-  // {3:1, 4:1, 6:2}
-  // sorted = 3 4 6 6
-  // x = 8
-  // y = 10
-  // total=19
-  // pos(1,2)=4+6=10-19=09
-  // pos(1,4)=4+6=10-19=09
-  // pos(2,3)=6+3=09-19=10
-  // pos(3,4)=3+6=09-19=10
+  cout << res / 2 << "\n";
 }
 
 int main() {

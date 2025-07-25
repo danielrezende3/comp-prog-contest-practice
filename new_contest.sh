@@ -52,6 +52,7 @@ using namespace std;
 #define ll long long
 #define ld long double
 #define vll vector<ll>
+#define vld vector<ld>
 
 void solve() {
     
