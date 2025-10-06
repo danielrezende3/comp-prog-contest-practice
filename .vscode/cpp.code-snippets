@@ -27,5 +27,29 @@
 			""
 		],
 		"description": "Template for C++ competitive programming"
+	},
+		"LeetCode C++ template": {
+		"prefix": "ltc",
+		"body": [
+			"#include <bits/stdc++.h>",
+			"",
+			"using namespace std;",
+			"#define ll long long",
+			"#define ld long double",
+			"#define vll vector<ll>",
+			"#define vld vector<ld>",
+			"",
+			"class Solution {",
+			"public:",
+			"  $1",
+			"};",
+			"",
+			"int main() {",
+			"  Solution sol = new Solution();",
+			"  return 0;",
+			"}",
+			""
+		],
+		"description": "Template for C++ Leetcode"
 	}
 }
