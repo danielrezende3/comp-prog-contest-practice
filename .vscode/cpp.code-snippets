@@ -45,7 +45,7 @@
 			"};",
 			"",
 			"int main() {",
-			"  Solution sol = new Solution();",
+			"  Solution sol;",
 			"  return 0;",
 			"}",
 			""
